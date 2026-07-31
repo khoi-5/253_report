@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Docker đã chạy trên EC2 rồi, vậy Amazon ECS sinh ra để làm gì?"
 date: 2024-01-01
 weight: 1
@@ -6,56 +6,50 @@ chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-Trong quá trình học AWS, em bắt đầu với Amazon EC2. Sau khi tạo một EC2 instance và deploy project bằng Docker, em từng nghĩ quy trình triển khai chỉ cần dừng ở đó: mỗi khi có phiên bản mới thì SSH vào EC2, pull image mới và chạy lại container.
+Trong quá trình học AWS, mình bắt đầu với EC2.
 
-Tuy nhiên, trong nhiều kiến trúc mẫu của AWS, Amazon ECS lại xuất hiện thay vì chỉ chạy Docker trực tiếp trên EC2. Điều này khiến em đặt câu hỏi: nếu Docker đã chạy được trên EC2 thì tại sao AWS còn cần Amazon ECS?
+Sau khi tạo EC2 và deploy thành công project bằng Docker, mình nghĩ rằng quy trình triển khai chắc cũng chỉ đến đó. Mỗi lần cập nhật phiên bản mới thì chỉ cần SSH vào EC2, pull image mới rồi chạy lại container là xong.
 
-## Docker và ECS giải quyết hai bài toán khác nhau
+Tuy nhiên, khi xem các kiến trúc mẫu và tài liệu của AWS, mình lại thấy rất nhiều hệ thống sử dụng Amazon ECS thay vì chỉ chạy Docker trực tiếp trên EC2.
 
-Docker giúp đóng gói ứng dụng cùng các dependency thành container image. Nhờ đó, ứng dụng có thể chạy nhất quán ở nhiều môi trường.
+Lúc đó mình khá thắc mắc.
 
-Nhưng khi số lượng container hoặc yêu cầu vận hành tăng lên, hệ thống bắt đầu cần:
+Docker đã chạy được trên EC2 rồi, vậy tại sao AWS còn phát triển thêm Amazon ECS?
+
+Sau khi tìm hiểu thì mình mới nhận ra Docker và ECS giải quyết hai bài toán hoàn toàn khác nhau.
+
+Docker giúp mình đóng gói ứng dụng thành container để có thể chạy ở nhiều môi trường khác nhau.
+
+Nhưng khi ứng dụng phát triển hơn, sẽ xuất hiện những nhu cầu như:
 
 - Luôn duy trì một số lượng container nhất định.
-- Tự tạo lại workload khi container gặp lỗi.
-- Tăng hoặc giảm số lượng container theo tải.
-- Phân phối request qua load balancer.
-- Triển khai phiên bản mới theo từng bước và hạn chế gián đoạn.
-- Theo dõi trạng thái của nhiều container thay vì SSH vào từng máy.
+- Tự động khởi động lại khi container bị lỗi.
+- Scale số lượng container khi lượng truy cập tăng.
+- Triển khai phiên bản mới của ứng dụng một cách thuận tiện hơn.
 
-Đây là bài toán **container orchestration**, không còn chỉ là bài toán đóng gói container.
+Đó không còn là bài toán của Docker nữa, mà là bài toán quản lý và điều phối container.
 
-Amazon ECS là dịch vụ điều phối container được AWS quản lý. Thay vì tự SSH vào từng EC2 và chạy lệnh Docker, người vận hành khai báo cấu hình cùng trạng thái mong muốn; ECS scheduler hỗ trợ sắp xếp và quản lý các workload container.
+Đây cũng chính là mục đích của Amazon ECS (Elastic Container Service).
 
-Ví dụ, nếu một ECS Service được đặt `desiredCount = 3`, Service sẽ cố gắng duy trì ba Task đang chạy. Khi một Task dừng hoặc bị đánh dấu không khỏe, ECS Service scheduler có thể khởi chạy Task thay thế để đưa hệ thống về trạng thái mong muốn.
+Có thể hiểu đơn giản, ECS là dịch vụ của AWS giúp quản lý các container đang chạy. Thay vì phải SSH vào từng EC2 và tự thực hiện các lệnh Docker, mình chỉ cần khai báo trạng thái mong muốn của hệ thống, còn ECS sẽ hỗ trợ duy trì trạng thái đó.
 
-## ECS chạy container ở đâu?
+Ví dụ, nếu mình muốn luôn có 3 container backend hoạt động, khi một container gặp sự cố và dừng lại thì ECS sẽ tự tạo container mới để thay thế mà không cần mình can thiệp thủ công.
 
-Hai lựa chọn thường gặp là:
+Trong quá trình tìm hiểu, mình cũng biết ECS có hai cách triển khai:
 
-- **Amazon EC2:** container vẫn chạy trên các EC2 instance thuộc ECS cluster. Nhóm vận hành quản lý capacity của EC2, còn ECS quản lý workload container.
-- **AWS Fargate:** cung cấp compute serverless cho container; người dùng không phải trực tiếp quản lý máy chủ bên dưới.
+- **EC2 Launch Type:** mình vẫn sử dụng EC2 nhưng ECS sẽ quản lý các container chạy trên những EC2 đó.
+- **AWS Fargate:** không cần quản lý EC2, chỉ cần khai báo container và AWS sẽ quản lý hạ tầng phía dưới.
 
-Vì vậy, ECS không thay thế Docker và cũng không nhất thiết thay thế EC2. Docker tạo image; EC2 hoặc Fargate cung cấp compute; ECS điều phối việc triển khai và vận hành container trên compute đó.
+Điều mình thấy thú vị là ECS không thay thế Docker.
 
-## Khi nào chạy Docker trực tiếp trên EC2 vẫn phù hợp?
+Docker vẫn là công cụ để tạo container, còn ECS giúp quản lý những container đó khi ứng dụng bắt đầu lớn hơn và việc vận hành trở nên phức tạp hơn.
 
-Với một project nhỏ, một container, ít thay đổi và chấp nhận vận hành thủ công, Docker trực tiếp trên EC2 có thể đơn giản hơn. Đây cũng là trạng thái production hiện tại của project Cloud E-Wallet em thực hiện.
-
-Khi hệ thống cần nhiều container, tự phục hồi, rolling deployment, load balancing hoặc scaling, ECS trở nên hữu ích hơn vì giảm số thao tác thủ công và quản lý trạng thái tập trung.
-
-## Kết luận
-
-Điểm em rút ra là Docker và ECS bổ trợ cho nhau:
-
-- **Docker:** đóng gói và chạy container.
-- **Amazon ECS:** triển khai, quản lý và điều phối container ở quy mô hệ thống.
-
-Hiểu sự khác nhau này giúp em lý giải vì sao một ứng dụng có thể bắt đầu bằng Docker trên EC2, rồi nghiên cứu chuyển sang ECS khi yêu cầu vận hành tăng lên.
+Sau khi đọc tài liệu, mình hiểu vì sao trong rất nhiều kiến trúc trên AWS, Docker và ECS thường đi cùng nhau. Một bên giúp đóng gói ứng dụng, còn một bên giúp triển khai và vận hành các container một cách hiệu quả hơn.
 
 ## Tài liệu tham khảo
 
-- [Amazon ECS Developer Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
-- [Bài đăng trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2224875461610747/)
+- [Amazon Elastic Container Service Documentation](https://docs.aws.amazon.com/ecs/)
 
+## Liên kết bài viết đã đăng
 
+- [Xem bài viết trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2224875461610747/)

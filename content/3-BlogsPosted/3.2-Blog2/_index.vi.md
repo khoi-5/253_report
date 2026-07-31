@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Amazon ECS và Amazon EKS khác nhau như thế nào?"
 date: 2024-01-01
 weight: 2
@@ -6,66 +6,41 @@ chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-Trong quá trình tìm hiểu các dịch vụ container trên AWS, em nhận thấy AWS có cả Amazon ECS và Amazon EKS. Cả hai đều giúp triển khai và quản lý container, nhưng chúng dựa trên hai nền tảng orchestration khác nhau.
+Trong quá trình tìm hiểu về các dịch vụ container trên AWS, mình nhận thấy AWS cung cấp hai dịch vụ là Amazon ECS (Elastic Container Service) và Amazon EKS (Elastic Kubernetes Service). Ban đầu mình khá thắc mắc vì cả hai đều được giới thiệu là dịch vụ giúp triển khai và quản lý container, vậy điểm khác nhau giữa chúng là gì và trong trường hợp nào nên sử dụng từng dịch vụ?
 
-## Amazon ECS
+Sau khi đọc tài liệu của AWS, mình nhận ra rằng điểm khác biệt lớn nhất không nằm ở việc chạy container, mà nằm ở nền tảng orchestration mà mỗi dịch vụ sử dụng.
 
-Amazon Elastic Container Service là dịch vụ điều phối container do AWS phát triển và quản lý. ECS tích hợp trực tiếp với các dịch vụ như IAM, CloudWatch, Elastic Load Balancing và Amazon ECR.
+Amazon ECS là dịch vụ orchestration container do chính AWS phát triển. ECS được thiết kế để tích hợp chặt chẽ với hệ sinh thái AWS, vì vậy việc kết nối với các dịch vụ như IAM, CloudWatch, Auto Scaling hay Application Load Balancer tương đối đơn giản. Nếu ứng dụng chủ yếu được triển khai trên AWS thì ECS thường là lựa chọn dễ tiếp cận vì không cần phải học thêm Kubernetes mà vẫn có thể quản lý container hiệu quả.
 
-Một số đặc điểm:
+Trong khi đó, Amazon EKS là dịch vụ Kubernetes được AWS quản lý. Thay vì sử dụng nền tảng orchestration do AWS xây dựng, EKS sử dụng Kubernetes – nền tảng mã nguồn mở đang được sử dụng rất phổ biến trong nhiều doanh nghiệp. AWS sẽ chịu trách nhiệm quản lý control plane của Kubernetes, giúp giảm bớt khối lượng công việc so với việc tự triển khai một Kubernetes cluster.
 
-- Mô hình tài nguyên tập trung vào Cluster, Task Definition, Task và Service.
-- Không yêu cầu người dùng vận hành Kubernetes control plane.
-- Phù hợp khi workload chủ yếu chạy trên AWS và nhóm muốn sử dụng mô hình điều phối AWS-native.
-- Có thể dùng EC2 capacity hoặc AWS Fargate.
+Sau khi tìm hiểu, mình tóm tắt sự khác nhau như sau:
 
-## Amazon EKS
+### Amazon ECS
 
-Amazon Elastic Kubernetes Service là dịch vụ Kubernetes được AWS quản lý. Với EKS Standard, AWS quản lý Kubernetes control plane; người dùng vẫn làm việc với Kubernetes API và hệ sinh thái Kubernetes. EKS cũng cung cấp những lựa chọn quản lý hạ tầng cao hơn như EKS Auto Mode.
+- Dịch vụ orchestration container do AWS phát triển.
+- Tích hợp chặt chẽ với các dịch vụ trong hệ sinh thái AWS.
+- Tương đối dễ học và triển khai nếu ứng dụng chỉ chạy trên AWS.
+- Có thể triển khai trên EC2 hoặc AWS Fargate.
 
-Một số đặc điểm:
+### Amazon EKS
 
-- Sử dụng các khái niệm và API Kubernetes như Pod, Deployment, Service và ConfigMap.
-- Tương thích với nhiều công cụ, manifest và plugin trong hệ sinh thái Kubernetes.
-- Phù hợp khi tổ chức đã có kỹ năng Kubernetes, cần Kubernetes-native tooling hoặc muốn duy trì tính tương thích của workload.
-- Workload có thể chạy trên EC2 hoặc AWS Fargate, tùy cấu hình hỗ trợ.
+- Dịch vụ Kubernetes được AWS quản lý.
+- Sử dụng Kubernetes thay vì nền tảng orchestration riêng của AWS.
+- Phù hợp với các dự án đã sử dụng Kubernetes hoặc cần tận dụng hệ sinh thái Kubernetes.
+- Cũng có thể triển khai trên EC2 hoặc AWS Fargate.
 
-## Bảng so sánh
+Điều mình thấy thú vị là ECS và EKS không phải là hai dịch vụ cạnh tranh trực tiếp. Chúng đều giải quyết bài toán quản lý container nhưng hướng đến những nhu cầu khác nhau.
 
-| Tiêu chí | Amazon ECS | Amazon EKS |
-| --- | --- | --- |
-| Nền tảng điều phối | AWS-native | Kubernetes |
-| Đơn vị workload | Task | Pod |
-| Quản lý ứng dụng dài hạn | ECS Service | Kubernetes Deployment/Service |
-| Độ phức tạp học ban đầu | Thường thấp hơn nếu chỉ dùng AWS | Cần kiến thức Kubernetes |
-| Hệ sinh thái | Tích hợp sâu với AWS | AWS và hệ sinh thái Kubernetes |
-| Compute phổ biến | EC2, Fargate | EC2, Fargate |
-| Tính tương thích Kubernetes | Không | Có |
+Nếu hệ thống chủ yếu triển khai trên AWS và mong muốn một giải pháp đơn giản, tích hợp tốt với các dịch vụ của AWS thì ECS là một lựa chọn phù hợp. Ngược lại, nếu dự án đã sử dụng Kubernetes hoặc cần tính linh hoạt để triển khai trên nhiều môi trường khác nhau thì EKS sẽ là lựa chọn phù hợp hơn.
 
-## Nên chọn dịch vụ nào?
-
-ECS thường phù hợp khi:
-
-- Hệ thống tập trung trên AWS.
-- Nhóm muốn bắt đầu nhanh với mô hình ít khái niệm hơn Kubernetes.
-- Không có yêu cầu bắt buộc dùng Kubernetes API hoặc công cụ Kubernetes-native.
-
-EKS thường phù hợp khi:
-
-- Dự án hoặc tổ chức đã chuẩn hóa trên Kubernetes.
-- Nhóm cần công cụ, operator, manifest hoặc quy trình Kubernetes hiện có.
-- Khả năng tương thích Kubernetes là một yêu cầu kiến trúc.
-
-Việc sử dụng Kubernetes không tự động bảo đảm một ứng dụng có thể chuyển sang mọi môi trường mà không thay đổi; networking, storage, IAM và các dịch vụ managed vẫn có thể phụ thuộc nền tảng. Vì vậy, quyết định nên dựa trên năng lực đội ngũ, yêu cầu kỹ thuật, chi phí và độ phức tạp vận hành.
-
-## Kết luận
-
-ECS và EKS đều giải quyết bài toán quản lý container, nhưng cung cấp hai mô hình điều phối khác nhau. ECS ưu tiên trải nghiệm AWS-native, còn EKS cung cấp Kubernetes được AWS quản lý. Không có lựa chọn luôn tốt hơn; lựa chọn phù hợp phụ thuộc vào kiến trúc và kinh nghiệm của nhóm.
+Sau khi tìm hiểu, mình thấy AWS không tạo ra ECS và EKS để một dịch vụ thay thế dịch vụ còn lại. Thay vào đó, AWS cung cấp hai lựa chọn nhằm đáp ứng những nhu cầu triển khai khác nhau của người dùng. Việc lựa chọn ECS hay EKS sẽ phụ thuộc vào kiến trúc hệ thống, công nghệ mà dự án đang sử dụng cũng như yêu cầu về khả năng mở rộng và vận hành trong thực tế.
 
 ## Tài liệu tham khảo
 
-- [Amazon ECS documentation](https://docs.aws.amazon.com/ecs/)
-- [What is Amazon EKS?](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html)
-- [Bài đăng trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2225042811594012/)
+- [Amazon ECS](https://docs.aws.amazon.com/ecs/)
+- [Amazon EKS](https://docs.aws.amazon.com/eks/)
 
+## Liên kết bài viết đã đăng
 
+- [Xem bài viết trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2225042811594012/)

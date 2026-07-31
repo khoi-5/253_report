@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Nhật ký tuần 7"
 date: 2024-01-01
 weight: 1
@@ -19,7 +19,7 @@ pre: " <b> 1.7. </b> "
 | 3 | Tìm hiểu ALB, listener, target group, health check và cách phân phối request đến backend. | 14/07/2026 | 14/07/2026 | AWS Study Group – FCJ 2025 và tài liệu AWS |
 | 4 | Tìm hiểu CloudWatch metrics/logs ở mức cơ bản và Spring Boot Actuator health endpoint. | 15/07/2026 | 15/07/2026 | AWS Study Group – FCJ 2025 và tài liệu AWS |
 | 5 | Chạy backend tests, package, frontend build/lint; sửa lỗi và build Docker image. | 16/07/2026 | 16/07/2026 | Source và tài liệu Cloud E-Wallet |
-| 6 | Tạo VPC/subnet/Security Group, RDS private subnet và EC2 để chuẩn bị deploy. | 17/07/2026 | 17/07/2026 | Source và tài liệu Cloud E-Wallet |
+| 6 | Tạo VPC, subnet, Security Group, RDS private và EC2 private sau ALB để chuẩn bị triển khai. | 17/07/2026 | 17/07/2026 | Source và tài liệu Cloud E-Wallet |
 
 ### Kết quả đạt được
 

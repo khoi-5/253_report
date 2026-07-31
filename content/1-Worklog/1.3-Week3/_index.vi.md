@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Nhật ký tuần 3"
 date: 2024-01-01
 weight: 1
@@ -18,7 +18,7 @@ pre: " <b> 1.3. </b> "
 | 2 | Tìm hiểu VPC, CIDR, public/private subnet và cách chia subnet theo nhu cầu hệ thống. | 15/06/2026 | 15/06/2026 | AWS Study Group – FCJ 2025 và tài liệu AWS |
 | 3 | Tìm hiểu Route Table, Internet Gateway, luồng Internet inbound/outbound và public IPv4. | 16/06/2026 | 16/06/2026 | AWS Study Group – FCJ 2025 và tài liệu AWS |
 | 4 | Tìm hiểu Security Group, Network ACL, Load Balancer và nguyên tắc tách lớp Web–Application–Database. | 17/06/2026 | 17/06/2026 | AWS Study Group – FCJ 2025 và tài liệu AWS |
-| 5 | Vẽ kiến trúc mạng dự kiến: CloudFront/S3, ALB, EC2 public subnet và RDS private subnet. | 18/06/2026 | 18/06/2026 | Source và tài liệu Cloud E-Wallet |
+| 5 | Vẽ kiến trúc mạng dự kiến: CloudFront/S3, ALB, EC2 trong private subnet và RDS trong DB subnet group. | 18/06/2026 | 18/06/2026 | Source và tài liệu Cloud E-Wallet |
 | 6 | Thiết kế các bảng users, account_tokens, profiles, wallets, services, transactions và khởi tạo schema local. | 19/06/2026 | 19/06/2026 | Source và tài liệu Cloud E-Wallet |
 
 ### Kết quả đạt được

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Week 11 Worklog"
 date: 2024-01-01
 weight: 2
@@ -25,5 +25,5 @@ pre: " <b> 1.11. </b> "
 
 - I understood the main stages of a CI/CD pipeline.
 - I proposed separate frontend and backend pipelines.
-- CI/CD was not implemented; production deployment remained manual.
+- I described how secrets, approvals, and rollback can make a pipeline safer to operate.
 

@@ -1,124 +1,101 @@
-﻿---
-title: "Event 1"
-date: 2024-01-01
+---
+title: "Cuộc thi kiến thức AWS dành cho thực tập sinh"
+date: 2026-06-20
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
- 
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
 
-### Mục Đích Của Sự Kiện
+## Thông tin sự kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- **Thời gian:** Ngày 20/06/2026
+- **Đơn vị tổ chức:** First Cloud AI Journey (FCAJ)
+- **Đối tượng tham gia:** Các sinh viên đang thực tập trong chương trình FCAJ
+- **Vai trò của em:** Khán giả theo dõi cuộc thi
+- **Quy mô:** 8 đội tham gia
 
-### Danh Sách Diễn Giả
+## Mục đích của sự kiện
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- Tạo sân chơi giúp các thực tập sinh ôn tập và vận dụng kiến thức AWS đã học.
+- Kiểm tra khả năng phân tích kiến trúc, lựa chọn dịch vụ và xử lý tình huống cloud.
+- Giúp người tham dự quan sát cách các đội thảo luận, thống nhất quyết định và chịu trách nhiệm với đáp án chung.
+- Tạo cơ hội giao lưu và học hỏi giữa các nhóm thực tập sinh.
 
-### Nội Dung Nổi Bật
+## Hình thức thi đấu
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+Cuộc thi có 8 đội tham gia và được tổ chức theo các vòng đấu loại trực tiếp. Ngày em tham dự diễn ra phần còn lại của **vòng tứ kết** và **vòng bán kết**. Mỗi vòng gồm **10 câu hỏi trắc nghiệm** về AWS; các thành viên trong đội có thời gian đọc đề, phân tích lựa chọn và thống nhất một đáp án đại diện. Em tham dự với vai trò khán giả, theo dõi cách các đội xử lý câu hỏi và đối chiếu đáp án với kiến thức đã học.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+Các câu hỏi được xây dựng theo hai nhóm kiến thức có độ khó khác nhau:
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- Nhóm kiến thức nền tảng, tương ứng với nội dung thường gặp trong **AWS Certified Cloud Practitioner**.
+- Nhóm câu hỏi kiến trúc và tình huống có độ khó cao hơn, gần với nội dung của **AWS Certified Solutions Architect**.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+Hai nhóm câu hỏi giúp cuộc thi vừa kiểm tra kiến thức AWS cơ bản, vừa yêu cầu người tham gia vận dụng nhiều dịch vụ để phân tích một kiến trúc hoặc tình huống thực tế.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+## Nội dung nổi bật
 
-#### Domain-Driven Design (DDD)
+### Kiến thức AWS và Cloud
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+Các câu hỏi bao phủ nhiều chủ đề đã được học trước sự kiện, gồm:
 
-#### Event-Driven Architecture
+- Mô hình trách nhiệm chung và các nguyên tắc cơ bản của AWS Cloud.
+- IAM, phân quyền và bảo mật tài khoản.
+- Amazon EC2, container và lựa chọn dịch vụ compute.
+- Amazon S3, cơ sở dữ liệu và các hình thức lưu trữ.
+- VPC, subnet, định tuyến và kết nối mạng.
+- Khả năng mở rộng, tính sẵn sàng cao và tối ưu chi phí.
+- AWS Organizations, Service Control Policy và cách quản trị nhiều tài khoản.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+Một số câu hỏi mô tả kiến trúc hoặc sự cố cụ thể. Qua việc theo dõi, em nhận thấy các đội không thể chỉ ghi nhớ tên dịch vụ mà phải xác định yêu cầu, loại trừ phương án chưa phù hợp và chọn giải pháp đáp ứng tốt nhất các điều kiện của đề bài.
 
-#### Compute Evolution
+### Quan sát quá trình thảo luận và thống nhất đáp án
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+Mỗi thành viên có thể hiểu câu hỏi theo một hướng khác nhau. Vì vậy, đội cần trình bày ngắn gọn cơ sở lựa chọn, lắng nghe ý kiến phản biện và thống nhất đáp án trước khi hết thời gian. Khi xuất hiện nhiều phương án gần giống nhau, việc dựa vào từ khóa và điều kiện trong đề giúp cuộc thảo luận tập trung hơn.
 
-#### Amazon Q Developer
+Qua việc quan sát, em nhận ra rằng làm việc nhóm không đơn thuần là chọn đáp án theo số đông. Một quyết định chung cần có lý do rõ ràng, đồng thời các thành viên phải sẵn sàng thay đổi lựa chọn khi có lập luận thuyết phục hơn.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+## Những gì học được
 
-### Những Gì Học Được
+### Củng cố kiến thức
 
-#### Tư Duy Thiết Kế
+- Ôn lại các dịch vụ AWS và kiến thức cloud đã học trong thời gian trước sự kiện.
+- Hiểu rõ hơn mối liên hệ giữa IAM, Organizations, networking, compute, storage và database trong một kiến trúc.
+- Luyện cách đọc câu hỏi tình huống, xác định yêu cầu chính và loại trừ đáp án không phù hợp.
+- Nhận ra những phần kiến thức còn nhầm lẫn để tiếp tục tìm hiểu sau cuộc thi.
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+### Ví dụ câu hỏi và bài học về Service Control Policy
 
-#### Kiến Trúc Kỹ Thuật
+Một câu hỏi xuất hiện trong cuộc thi mô tả tình huống: doanh nghiệp quản lý nhiều tài khoản bằng **AWS Organizations**, một tài khoản mới được thêm vào Organizational Unit (OU) và đã được áp dụng Service Control Policy (SCP) để từ chối một số thao tác Amazon ECS. Tuy nhiên, các thao tác đó vẫn được thực hiện thông qua một **service-linked role**. Câu hỏi yêu cầu xác định nguyên nhân.
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+**Đáp án đúng:** SCP không ảnh hưởng đến service-linked role.
 
-#### Chiến Lược Hiện Đại Hóa
+Service-linked role là IAM role được một dịch vụ AWS định nghĩa và sử dụng để thay mặt người dùng thực hiện các tác vụ cần thiết. AWS Organizations không dùng SCP để hạn chế quyền của service-linked role. Vì vậy, thao tác do role này thực hiện vẫn có thể xảy ra dù SCP đã từ chối cùng hành động đối với IAM user hoặc role thông thường trong tài khoản.
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+Các phương án còn lại không phù hợp vì:
 
-### Ứng Dụng Vào Công Việc
+- Một policy cho phép ở OU cấp cao hơn không thể ghi đè một lệnh `Deny` rõ ràng; explicit deny luôn được ưu tiên.
+- SCP áp dụng theo tài khoản và OU trong AWS Organizations, không mất hiệu lực chỉ vì dịch vụ chạy ở Region khác.
+- SCP mặc định `FullAWSAccess` không cấp quyền và cũng không ghi đè policy từ chối; SCP chỉ thiết lập giới hạn quyền tối đa cho tài khoản thành viên.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+Qua câu hỏi này, em phân biệt rõ hơn giữa **IAM policy**, **SCP** và **service-linked role**, đồng thời hiểu rằng khi phân tích quyền trên AWS cần xác định chính xác principal nào đang thực hiện hành động.
+### Bài học về làm việc nhóm
 
-### Trải nghiệm trong event
+Qua việc quan sát các đội thi, em học được cách trình bày ý kiến ngắn gọn, lắng nghe và so sánh các lập luận trước khi đưa ra quyết định chung. Các đội phối hợp tốt không chỉ dựa vào kiến thức của một cá nhân mà còn biết phân chia thời gian, giữ bình tĩnh và thống nhất phương án khi câu hỏi có độ khó cao.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp em có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+## Trải nghiệm trong sự kiện
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, em hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+Không khí thi đấu ở vòng tứ kết và bán kết tạo áp lực rõ rệt vì số câu hỏi và thời gian đều giới hạn. Những câu kiến thức nền tảng giúp các đội khởi động và kiểm tra khả năng ghi nhớ, trong khi các câu tình huống khó yêu cầu họ phân tích kỹ kiến trúc và quyền hạn của từng dịch vụ AWS.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp em hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+Giá trị lớn nhất đối với em nằm ở việc theo dõi quá trình các đội trao đổi để đi đến quyết định. Dù không trực tiếp thi đấu, em vẫn có thể tự phân tích từng câu hỏi, so sánh với đáp án của các đội và hệ thống lại kiến thức đã học. Sự kiện giúp em rèn luyện tư duy phản biện và hiểu rằng trong công việc kỹ thuật, một phương án tốt cần được giải thích bằng yêu cầu và dữ kiện cụ thể.
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+## Hình ảnh minh chứng
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, em nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+![Các đội trả lời câu hỏi AWS trong cuộc thi](image.png)
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+<p style="text-align: center;"><em>Hình 4.1. Câu hỏi tình huống về AWS Organizations và Service Control Policy tại cuộc thi.</em></p>
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp em thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+## Tổng kết
 
+Cuộc thi do FCAJ tổ chức đã giúp em củng cố kiến thức AWS và Cloud theo hình thức thực tế, có tính tương tác cao. Bên cạnh việc ôn tập các dịch vụ và kiến trúc, em còn học được cách phân tích nhanh, giải thích lựa chọn và quan sát cách các đội phối hợp để thống nhất quyết định trong thời gian giới hạn.

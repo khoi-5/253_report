@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Week 9 Worklog"
 date: 2024-01-01
 weight: 1
@@ -19,11 +19,11 @@ pre: " <b> 1.9. </b> "
 | 3 | Review responsive UI, email, and transaction workflows. | 28/07/2026 | 28/07/2026 | Project and official documentation |
 | 4 | Update README, architecture, environment-variable, and deployment documentation. | 29/07/2026 | 29/07/2026 | Project and official documentation |
 | 5 | Summarize objectives, technology, work, and outcomes for the report. | 30/07/2026 | 30/07/2026 | Project and official documentation |
-| 6 | Revise the report, prepare the demo, and document limitations and future work. | 31/07/2026 | 31/07/2026 | Project and official documentation |
+| 6 | Revise the report, prepare the demo, and align the content with the actual deployment state. | 31/07/2026 | 31/07/2026 | Project and official documentation |
 
 ### Outcomes
 
 - I completed the product version and supporting documentation.
-- The report accurately described production without presenting future work as implemented.
+- The report consistently describes the system architecture, deployment procedure, and validation results.
 - I prepared the demonstration and project self-evaluation.
 

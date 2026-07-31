@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Nhật ký tuần 11"
 date: 2024-01-01
 weight: 2
@@ -9,7 +9,7 @@ pre: " <b> 1.11. </b> "
 ### Mục tiêu tuần 11
 
 - Tìm hiểu quy trình tự động hóa build, test và deploy.
-- Đề xuất pipeline phù hợp với frontend và backend của dự án.
+- Thiết kế pipeline tham khảo phù hợp với frontend và backend của dự án.
 
 ### Công việc thực hiện
 
@@ -25,5 +25,5 @@ pre: " <b> 1.11. </b> "
 
 - Em hiểu được các bước chính của một pipeline CI/CD.
 - Em đề xuất được pipeline riêng cho frontend và backend.
-- CI/CD chưa được triển khai; deployment production hiện vẫn thực hiện thủ công.
+- Em mô tả được cách quản lý secret, phê duyệt và rollback để pipeline vận hành an toàn hơn.
 

@@ -6,153 +6,74 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch “FCAJ Sharing Session – Agentic AI Build Week 2026”
+
 
 ## Thông tin sự kiện
 
-- **Tên sự kiện:** FCAJ Sharing Session – Agentic AI Build Week 2026
-- **Thời gian:** 08:30–12:00, Thứ Bảy ngày 25/07/2026
+- **Thời gian:** 09:00–12:00, ngày 25/07/2026
 - **Địa điểm:** Tầng 26, Bitexco Financial Tower, Thành phố Hồ Chí Minh
 - **Đơn vị tổ chức:** First Cloud AI Journey (FCAJ)
 - **Vai trò của em:** Người tham dự buổi chia sẻ và tổng kết
 
-## Bối cảnh và mục đích của sự kiện
+## Bối cảnh sự kiện
 
-**Agentic AI Build Week 2026 (AABW 2026)** là hackathon Agentic AI do GenAI Fund tổ chức tại Thành phố Hồ Chí Minh từ ngày 08–12/07/2026. AWS là đối tác chiến lược và phụ trách hạng mục **Built with AWS**, nơi các đội phát triển ứng dụng AI có khả năng triển khai thực tế bằng Amazon Bedrock và những công nghệ AI/ML của AWS.
+Buổi chia sẻ được tổ chức sau Agentic AI Build Week 2026 để bốn đội thuộc cộng đồng FCAJ nhìn lại quá trình tham gia, từ lúc chọn bài toán đến khi hoàn thiện MVP và pitching. Một số đội đạt giải tại hạng mục Built with AWS; tuy nhiên, điều em quan tâm nhất không chỉ là kết quả mà còn là cách mỗi đội biến một ý tưởng ban đầu thành sản phẩm có thể trình bày và kiểm chứng trong thời gian ngắn.
 
-Buổi em tham dự ngày 25/07/2026 không phải ngày thi chính thức mà là buổi chia sẻ và tổng kết do cộng đồng FCAJ tổ chức sau cuộc thi. Sự kiện nhằm:
+Các phần trình bày cho thấy áp lực của một buildathon không chỉ nằm ở kỹ thuật. Nhóm còn phải hiểu đúng nhu cầu, thống nhất business logic, giới hạn phạm vi, phân chia công việc và chuẩn bị một câu chuyện đủ rõ để người nghe nhận ra giá trị của sản phẩm.
 
-- Chia sẻ hành trình tham gia AABW 2026 của bốn đội thuộc cộng đồng FCAJ.
-- Trình bày quá trình xác định bài toán, xây dựng MVP và pitching trong thời gian giới hạn.
-- Phân tích những khó khăn về business logic, kiến trúc kỹ thuật và phối hợp nhóm.
-- Tổng kết kết quả tại Built with AWS Track và truyền lại kinh nghiệm cho các thành viên FCAJ.
+## Bài học về tư duy phát triển sản phẩm
 
-## Các đội FCAJ và kết quả
+### Bắt đầu từ vấn đề thực tế
 
-| Đội | Sản phẩm hoặc nội dung trình bày | Kết quả tại Built with AWS Track |
-| --- | --- | --- |
-| **One Team** | KFC BOT – AI agent hỗ trợ đặt món qua nền tảng nhắn tin | **Winner** |
-| **SignalScout** | Giải pháp Agentic AI được phát triển và hoàn thiện qua nhiều vòng thử nghiệm | **Runner-Up** |
-| **3KA** | S.H.E.P.H.E.R.D. – giám sát và hỗ trợ vận hành địa điểm từ dữ liệu camera | **Top 6** |
-| **SA Professional** | AI-Native Requirements-to-Architecture Assistant dành cho Solution Architect | Đội tham gia AWS Track; chưa có thông tin giải thưởng chính thức |
+Điểm chung em nhận thấy ở những phần trình bày thuyết phục là đội xác định được người dùng, khó khăn mà họ đang gặp và kết quả mà giải pháp cần tạo ra. Công nghệ chỉ có ý nghĩa khi hỗ trợ được luồng nghiệp vụ đó. Nếu business logic chưa rõ, việc bổ sung nhiều mô hình AI hoặc dịch vụ cloud vẫn khó tạo thành một sản phẩm mạch lạc.
 
-Tên “Hackathon Journey 3KA” và “OneTeam CommunityDay” trong tài liệu chia sẻ là tên phần trình bày; tên đội được sử dụng trong cuộc thi lần lượt là **3KA** và **One Team**. Trong buổi tổng kết, các đội không chỉ giới thiệu sản phẩm mà còn trình bày quá trình hình thành ý tưởng, phân chia công việc, xử lý vấn đề và chuẩn bị pitching.
+Vì thời gian thi có giới hạn, nhóm cũng cần chọn một luồng cốt lõi để làm hoàn chỉnh. Một MVP nhỏ nhưng giải quyết được vấn đề, có dữ liệu vào, kết quả đầu ra và demo ổn định thường có giá trị hơn nhiều chức năng rời rạc chưa được kiểm chứng.
 
-## Nội dung nổi bật
+### Phối hợp trong nhóm
 
-### Xác định vấn đề và business logic
+Một đội hiệu quả cần các thành viên có khả năng bổ trợ lẫn nhau và sẵn sàng trao đổi thường xuyên. Việc phân chia vai trò chỉ thực sự hữu ích khi mọi người cùng hiểu một mục tiêu chung. Trong quá trình thực hiện, nhóm phải cập nhật tiến độ, phát hiện phần việc bị trùng hoặc lệch yêu cầu và điều chỉnh phạm vi kịp thời.
 
-Bài học nổi bật của sự kiện là sản phẩm nên bắt đầu từ nhu cầu thực tế, không phải từ mong muốn sử dụng công nghệ phức tạp. Đội cần xác định người dùng là ai, vấn đề nào cần giải quyết, luồng nghiệp vụ chính và kết quả mà sản phẩm phải tạo ra. Khi business logic chưa rõ, việc bổ sung nhiều mô hình AI hoặc dịch vụ cloud vẫn khó tạo ra một giải pháp thuyết phục.
+Em cũng nhận ra rằng kỹ năng lắng nghe và thống nhất quyết định quan trọng không kém kỹ năng chuyên môn. Khi thời gian ngắn, một đội không thể theo đuổi đồng thời mọi ý tưởng; các thành viên cần giải thích lựa chọn, chấp nhận đánh đổi và cùng chịu trách nhiệm với phương án chung.
 
-### Giới hạn phạm vi trong thời gian thi
+Một nhóm có nhiều vai trò như business analyst, developer, cloud engineer, UI/UX designer hoặc người phụ trách pitching sẽ nhìn cùng một bài toán từ các góc độ khác nhau. Sự khác biệt này có ích vì giúp nhóm phát hiện thêm yêu cầu nghiệp vụ, rủi ro kỹ thuật, vấn đề trải nghiệm người dùng và giới hạn về thời gian. Điều quan trọng là các góc nhìn phải được tổng hợp thành một mục tiêu và một phạm vi chung, thay vì mỗi người chỉ tối ưu phần việc của riêng mình.
 
-Buildathon yêu cầu các đội nhanh chóng chuyển từ ý tưởng sang sản phẩm có thể trình diễn. Vì vậy, đội phải lựa chọn chức năng quan trọng nhất, phân công công việc rõ ràng, chuẩn bị dữ liệu demo, kiểm thử luồng chính và dành thời gian cho pitching. Việc cố gắng hoàn thiện quá nhiều chức năng có thể làm giảm chất lượng của trải nghiệm cốt lõi.
+### Trình bày giá trị thay vì chỉ liệt kê công nghệ
 
-### Phối hợp và lựa chọn thành viên
+Một phần pitching rõ ràng cần trả lời được bốn câu hỏi: vấn đề là gì, ai đang gặp vấn đề, giải pháp hoạt động như thế nào và tác động thực tế ra sao. Kiến trúc cùng bản demo là bằng chứng cho khả năng thực hiện, nhưng người nghe vẫn cần hiểu vì sao sản phẩm đáng được sử dụng.
 
-Một đội phù hợp không chỉ cần người có kỹ năng kỹ thuật mà còn cần thành viên biết trao đổi, lắng nghe và chịu trách nhiệm với phần việc của mình. Các vai trò phân tích bài toán, xây dựng sản phẩm, kiểm thử và thuyết trình phải liên kết với nhau. Trao đổi thường xuyên giúp hạn chế hiểu sai yêu cầu, tránh làm trùng công việc và điều chỉnh phạm vi kịp thời.
+Bài học này giúp em thay đổi cách trình bày dự án. Thay vì bắt đầu bằng danh sách framework hoặc dịch vụ AWS, em nên bắt đầu từ bối cảnh, luồng nghiệp vụ và kết quả mà hệ thống tạo ra, sau đó mới giải thích công nghệ hỗ trợ các yêu cầu đó như thế nào.
 
-### Trình bày giá trị sản phẩm
+## Case study SA Professional AI Native App
 
-Pitching cần làm rõ vấn đề, đối tượng sử dụng, cách giải pháp hoạt động và giá trị mang lại. Demo kỹ thuật là bằng chứng cho khả năng thực hiện, nhưng giá trị kinh doanh và mức độ đáp ứng nhu cầu mới giúp người nghe hiểu vì sao sản phẩm cần tồn tại.
+Trong bốn phần chia sẻ, ý tưởng của đội **SA Professional** khiến em ấn tượng vì giải quyết một công việc rất thực tế của Solution Architect. Khi tiếp nhận dự án, họ thường phải đọc SOP, BRD hoặc PRD, trích xuất yêu cầu, phát hiện thông tin còn thiếu, phác thảo kiến trúc, vẽ sơ đồ và ước tính chi phí trong thời gian ngắn.
 
-## Case study “SA Professional AI Native App”
+Phần trình bày đưa ra một tình huống rất thực tế: khách hàng có thể gọi vào buổi tối và yêu cầu sáng hôm sau phải có ngay bản đề xuất ban đầu. Trong khoảng thời gian ngắn như vậy, Solution Architect vẫn phải làm rõ yêu cầu, nhận diện các giả định, phác thảo một hoặc nhiều phương án kiến trúc và đưa ra ước tính chi phí đủ cơ sở để tiếp tục trao đổi. Vấn đề không chỉ là làm nhanh, mà là tránh bỏ sót yêu cầu quan trọng khi thông tin đầu vào còn chưa đầy đủ.
 
-### Bài toán
+Giải pháp của đội tập trung hỗ trợ đúng quy trình này. Người dùng cung cấp tài liệu và mô tả bằng ngôn ngữ tự nhiên; hệ thống tổng hợp yêu cầu, chỉ ra khoảng trống thông tin rồi đề xuất các phương án thiết kế ở mức tổng quan, tạo sơ đồ và ước tính chi phí để Solution Architect tiếp tục kiểm tra. Mỗi phương án thiết kế mô tả cách tổ chức các thành phần chính, luồng dữ liệu, dịch vụ phù hợp và những đánh đổi về chi phí, bảo mật, khả năng mở rộng hoặc thời gian triển khai. AI đảm nhận phần chuẩn bị ban đầu, còn con người vẫn chịu trách nhiệm xác nhận yêu cầu, so sánh các phương án, đánh giá rủi ro và quyết định thiết kế cuối cùng.
 
-Một Solution Architect phải tiếp nhận tài liệu SOP, trích xuất yêu cầu, xây dựng phương án kiến trúc, tạo sơ đồ và ước tính chi phí cloud trong thời gian rất ngắn. Đây là nhóm công việc cần nhiều thao tác thủ công và phụ thuộc đáng kể vào kinh nghiệm của người thực hiện.
+Điều em học được từ case study không phải là sao chép một kiến trúc cụ thể, mà là cách tìm một bước đang tốn nhiều thời gian trong quy trình hiện có rồi tạo công cụ hỗ trợ đầu ra có thể kiểm tra và chỉnh sửa. Cách tiếp cận này đặc biệt hữu ích ở giai đoạn cuối của đồ án, khi nhóm phải đối chiếu yêu cầu, hoàn thiện kiến trúc, kiểm tra phần còn thiếu và chuẩn bị báo cáo.
 
-![Bài toán của SA Professional AI Native App](sa-ai-problem.png)
+## Khả năng áp dụng vào công việc
 
-<p style="text-align: center;"><em>Hình 4.3. Bài toán cần giải quyết của SA Professional AI Native App.</em></p>
+Từ sự kiện, em rút ra một số nguyên tắc có thể áp dụng trực tiếp vào dự án nhóm:
 
-### Giải pháp
+- Thống nhất người dùng, vấn đề và luồng nghiệp vụ trước khi chia phần kỹ thuật.
+- Ưu tiên hoàn thiện một luồng cốt lõi có thể kiểm thử từ đầu đến cuối.
+- Chia công việc theo đầu ra rõ ràng và cập nhật tiến độ thường xuyên.
+- Dùng sơ đồ kiến trúc, demo và số liệu để giải thích quyết định.
+- Xem AI là công cụ hỗ trợ tạo bản nháp; kết quả vẫn phải được đối chiếu với yêu cầu và source code.
+- Chuẩn bị pitching theo mạch vấn đề – giải pháp – cách hoạt động – tác động.
 
-Ứng dụng tiếp nhận tài liệu hoặc yêu cầu bằng ngôn ngữ tự nhiên, sau đó hỗ trợ:
-
-- Trích xuất yêu cầu và chỉ ra thông tin còn thiếu.
-- Tạo phương án kiến trúc mức cao để Solution Architect xem xét.
-- Sinh sơ đồ Draw.io có thể chỉnh sửa bằng bộ biểu tượng kiến trúc AWS.
-- Ước tính chi phí định hướng tại Region `ap-southeast-1`.
-- Ghi nhận giả định, khuyến nghị và tiếp tục tinh chỉnh qua hội thoại.
-
-Các kết quả là bản nháp có căn cứ để chuyên gia phản biện và điều chỉnh, không thay thế quyết định chuyên môn của Solution Architect.
-
-![Giải pháp SA Professional AI Native App](sa-ai-solution.png)
-
-<p style="text-align: center;"><em>Hình 4.4. Các khả năng chính của SA Professional AI Native App.</em></p>
-
-### Workflow
-
-Người dùng gửi tài liệu hoặc mô tả yêu cầu qua ứng dụng. App Server phối hợp Knowledge Base, Amazon Bedrock, Draw.io MCP và AWS Pricing MCP để tạo danh mục yêu cầu, phương án kiến trúc, sơ đồ và ước tính chi phí. Tài liệu nội bộ và nguồn tham khảo kiến trúc giúp kết quả bám sát bối cảnh dự án.
-
-![Workflow của SA Professional AI Native App](sa-ai-workflow.png)
-
-<p style="text-align: center;"><em>Hình 4.5. Luồng xử lý từ nguồn kiến thức đến các bản nháp đầu ra.</em></p>
-
-### Kiến trúc kỹ thuật
-
-Kiến trúc được trình bày sử dụng CloudFront và S3 cho giao diện, Cognito cho xác thực, Application Load Balancer chuyển request đến backend và agent chạy trên Amazon ECS/Fargate trong private subnet. PostgreSQL lưu dữ liệu; Amazon Bedrock và Draw.io hỗ trợ AI và tạo sơ đồ; ECR, EFS, S3, CloudWatch và Terraform hỗ trợ triển khai, lưu trữ và vận hành.
-
-![Kiến trúc SA Professional AI Native App](sa-ai-architecture.png)
-
-<p style="text-align: center;"><em>Hình 4.6. Kiến trúc AWS của SA Professional AI Native App.</em></p>
-
-### Giá trị mang lại
-
-Trước khi có công cụ hỗ trợ, Solution Architect phải đọc BRD/PRD, bắt đầu tài liệu từ trang trắng, tạo IaC và ước tính chi phí chủ yếu bằng thao tác thủ công. Giải pháp giúp tạo nhanh danh mục yêu cầu cùng bản nháp ban đầu, để chuyên gia tập trung hơn vào việc xác nhận yêu cầu, đánh giá rủi ro và đưa ra quyết định.
-
-![Tác động của SA Professional AI Native App](sa-ai-impact.png)
-
-<p style="text-align: center;"><em>Hình 4.7. So sánh quy trình trước và sau khi có công cụ hỗ trợ.</em></p>
-
-## Những gì học được
-
-### Tư duy phát triển sản phẩm
-
-- Bắt đầu từ vấn đề và nhu cầu của người dùng trước khi lựa chọn công nghệ.
-- Xác định business logic rõ ràng để mỗi tính năng phục vụ một mục tiêu cụ thể.
-- Ưu tiên một luồng chính hoàn chỉnh thay vì nhiều chức năng rời rạc.
-- Đánh giá giải pháp dựa trên giá trị sử dụng, không chỉ dựa trên độ phức tạp kỹ thuật.
-
-### Kỹ năng làm việc nhóm
-
-- Lựa chọn thành viên dựa trên kỹ năng, trách nhiệm và khả năng phối hợp.
-- Phân chia vai trò rõ ràng nhưng vẫn duy trì mục tiêu chung của đội.
-- Trao đổi thường xuyên, ghi nhận ý kiến khác nhau và thống nhất quyết định sớm.
-- Chủ động hỗ trợ nhau khi gặp lỗi hoặc cần thay đổi phạm vi.
-
-### Kỹ năng tham gia buildathon
-
-- Giới hạn phạm vi theo thời gian thực tế.
-- Kiểm thử theo toàn bộ kịch bản demo.
-- Chuẩn bị phần pitching ngắn gọn và nhất quán với sản phẩm.
-- Giải thích giá trị bằng ngôn ngữ dễ hiểu, tránh phụ thuộc quá nhiều vào thuật ngữ kỹ thuật.
-
-## Ứng dụng vào công việc
-
-- Xác định yêu cầu và luồng nghiệp vụ trước khi thiết kế chức năng hoặc kiến trúc.
-- Chia công việc nhóm theo đầu ra cụ thể và cập nhật tiến độ thường xuyên.
-- Ưu tiên hoàn thiện chức năng cốt lõi trước khi mở rộng phạm vi.
-- Sử dụng sơ đồ kiến trúc và ước tính chi phí để trao đổi giải pháp rõ ràng hơn.
-- Xem AI là công cụ hỗ trợ tạo bản nháp và tăng năng suất, còn kết quả vẫn cần được con người kiểm tra.
-
-## Trải nghiệm trong sự kiện
-
-Buổi chia sẻ giúp em hiểu rõ hơn những khó khăn thực tế khi tham gia một buildathon: thời gian ngắn, yêu cầu thay đổi, áp lực hoàn thiện demo và nhu cầu phối hợp liên tục giữa các thành viên. Qua phần trình bày của bốn đội, em nhận thấy một giải pháp hiệu quả không nhất thiết phải phức tạp nhất; điều quan trọng là xác định đúng vấn đề, đáp ứng được nhu cầu và truyền đạt rõ giá trị.
-
-Sự kiện cũng cho thấy kết quả của một đội phụ thuộc nhiều vào cách các thành viên trao đổi và hỗ trợ nhau. Kiến thức chuyên môn tạo nền tảng, nhưng trách nhiệm, khả năng lắng nghe và thống nhất hướng thực hiện giúp đội duy trì tiến độ trong điều kiện áp lực.
-
-### Một số hình ảnh khi tham gia sự kiện
+## Hình ảnh minh chứng
 
 ![Thông tin chương trình FCAJ Agentic AI Build Week](image.png)
 
-<p style="text-align: center;"><em>Hình 4.8. Thông tin chương trình FCAJ Agentic AI Build Week tại Bitexco Financial Tower.</em></p>
+<p style="text-align: center;"><em>Hình 4.2. Thông tin chương trình FCAJ Agentic AI Build Week tại Bitexco Financial Tower.</em></p>
 
 ![Không gian buổi chia sẻ và tổng kết](image-1.png)
 
-<p style="text-align: center;"><em>Hình 4.9. Người tham dự theo dõi phần chia sẻ của các đội FCAJ.</em></p>
+<p style="text-align: center;"><em>Hình 4.3. Người tham dự theo dõi phần chia sẻ của các đội FCAJ.</em></p>
 
 ## Tổng kết
 
-FCAJ Agentic AI Build Week mang lại cho em cả kiến thức về cách xây dựng sản phẩm Agentic AI và kinh nghiệm về tư duy business-first, quản lý phạm vi, pitching và phối hợp nhóm. Những bài học này có thể áp dụng trực tiếp vào các dự án học tập, dự án nhóm và môi trường làm việc thực tế.
+Sự kiện giúp em hiểu rằng một sản phẩm tốt cần cân bằng giữa ba yếu tố: giải quyết đúng nhu cầu, có khả năng thực hiện và được trình bày rõ ràng. Bên cạnh kiến thức về Agentic AI và AWS, em học được cách giới hạn phạm vi, phối hợp nhóm và đánh giá giải pháp theo giá trị thực tế. Đây là những kinh nghiệm có thể áp dụng cho cả Cloud E-Wallet, đồ án cuối khóa và các dự án sau này.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Nhật ký tuần 10"
 date: 2024-01-01
 weight: 2
@@ -9,7 +9,7 @@ pre: " <b> 1.10. </b> "
 ### Mục tiêu tuần 10
 
 - Tìm hiểu cách ECS quản lý container trên AWS.
-- Đề xuất hướng chuyển backend Cloud E-Wallet sang ECS trong tương lai.
+- Phân tích cách tổ chức backend Cloud E-Wallet theo mô hình Amazon ECS.
 
 ### Công việc thực hiện
 
@@ -25,5 +25,5 @@ pre: " <b> 1.10. </b> "
 
 - Em phân biệt được vai trò của Docker, EC2/Fargate và ECS.
 - Em hiểu sự khác nhau giữa Task, Service, ECS và EKS.
-- Phần ECS chỉ dừng ở mức tìm hiểu và đề xuất, chưa triển khai production.
+- Em xây dựng được mô hình tham khảo ECR → ECS Service/Fargate → ALB → RDS và xác định vai trò của từng thành phần.
 
