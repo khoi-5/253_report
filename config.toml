@@ -1,7 +1,7 @@
 baseURL = "https://khoi-5.github.io/253_report/"
 relativeURLs = false
 canonifyURLs = false
-defaultContentLanguage = "vi"
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
 # Change the default theme to be use when building the site with Hugo
