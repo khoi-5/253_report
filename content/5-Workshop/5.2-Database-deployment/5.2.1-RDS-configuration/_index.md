@@ -16,7 +16,7 @@ Our team created `RDS-Ewallet-SG` in `ewallet-vpc`. Its only inbound rule allows
 
 Port `3306` is not open to `0.0.0.0/0`, so RDS does not accept direct MySQL connections from the Internet.
 
-![RDS security group inbound rule](/images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-security-group-inbound.png)
+{{< report-image src="images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-security-group-inbound.png" alt="RDS security group inbound rule" >}}
 
 <p style="text-align: center;"><em>Figure 5.3. The inbound rule allows only the backend security group to connect to RDS on port 3306.</em></p>
 
@@ -24,13 +24,13 @@ Port `3306` is not open to `0.0.0.0/0`, so RDS does not accept direct MySQL conn
 
 The `ewallet-rds-subnet-group` DB subnet group contains two private subnets in `ap-southeast-1a` and `ap-southeast-1b`. This configuration satisfies the Amazon RDS network requirement and separates the database from the public subnets used by Internet-facing components.
 
-![RDS DB subnet group](/images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-subnet-group.png)
+{{< report-image src="images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-subnet-group.png" alt="RDS DB subnet group" >}}
 
 <p style="text-align: center;"><em>Figure 5.4. The DB subnet group uses two private subnets in two Availability Zones.</em></p>
 
 ## Amazon RDS for MySQL result
 
-![Cloud E-Wallet Amazon RDS MySQL status](image.png)
+{{< report-image src="images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/image.png" alt="Cloud E-Wallet Amazon RDS MySQL status" >}}
 
 <p style="text-align: center;"><em>Figure 5.5. RDS MySQL `ewallet-db` uses the `db.t4g.micro` instance class and is Available.</em></p>
 

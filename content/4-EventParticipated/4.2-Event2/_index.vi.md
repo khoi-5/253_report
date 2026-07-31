@@ -66,11 +66,11 @@ Từ sự kiện, em rút ra một số nguyên tắc có thể áp dụng trự
 
 ## Hình ảnh minh chứng
 
-![Thông tin chương trình FCAJ Agentic AI Build Week](image.png)
+{{< report-image src="images/4-EventParticipated/4.2-Event2/image.png" alt="Thông tin chương trình FCAJ Agentic AI Build Week" >}}
 
 <p style="text-align: center;"><em>Hình 4.2. Thông tin chương trình FCAJ Agentic AI Build Week tại Bitexco Financial Tower.</em></p>
 
-![Không gian buổi chia sẻ và tổng kết](image-1.png)
+{{< report-image src="images/4-EventParticipated/4.2-Event2/image-1.png" alt="Không gian buổi chia sẻ và tổng kết" >}}
 
 <p style="text-align: center;"><em>Hình 4.3. Người tham dự theo dõi phần chia sẻ của các đội FCAJ.</em></p>
 

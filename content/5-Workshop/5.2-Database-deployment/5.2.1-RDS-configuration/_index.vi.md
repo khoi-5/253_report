@@ -16,7 +16,7 @@ Nhóm chúng em tạo Security Group `RDS-Ewallet-SG` trong `ewallet-vpc`. Inbou
 
 Port `3306` không được mở cho `0.0.0.0/0`, vì vậy RDS không nhận kết nối MySQL trực tiếp từ Internet.
 
-![Inbound rule của Security Group RDS](/images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-security-group-inbound.png)
+{{< report-image src="images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-security-group-inbound.png" alt="Inbound rule của Security Group RDS" >}}
 
 <p style="text-align: center;"><em>Hình 5.3. Inbound rule chỉ cho phép Security Group của backend kết nối RDS qua port 3306.</em></p>
 
@@ -24,12 +24,12 @@ Port `3306` không được mở cho `0.0.0.0/0`, vì vậy RDS không nhận k�
 
 DB subnet group `ewallet-rds-subnet-group` gồm hai private subnet thuộc hai Availability Zone `ap-southeast-1a` và `ap-southeast-1b`. Cách bố trí này đáp ứng yêu cầu mạng của Amazon RDS và tách database khỏi các public subnet đang chứa thành phần nhận traffic từ bên ngoài.
 
-![DB subnet group của Cloud E-Wallet](/images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-subnet-group.png)
+{{< report-image src="images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/rds-subnet-group.png" alt="DB subnet group của Cloud E-Wallet" >}}
 
 <p style="text-align: center;"><em>Hình 5.4. DB subnet group sử dụng hai private subnet trên hai Availability Zone.</em></p>
 
 ## Kết quả tạo RDS MySQL
-![Trạng thái Amazon RDS MySQL của Cloud E-Wallet](image.png)
+{{< report-image src="images/5-Workshop/5.2-Database-deployment/5.2.1-RDS-configuration/image.png" alt="Trạng thái Amazon RDS MySQL của Cloud E-Wallet" >}}
 
 <p style="text-align: center;"><em>Hình 5.5. RDS MySQL `ewallet-db` sử dụng instance class `db.t4g.micro` và ở trạng thái Available.</em></p>
 RDS instance của dự án có DB identifier `ewallet-db`, sử dụng MySQL Community và instance class `db.t4g.micro` tại Region Singapore. Sau khi khởi tạo, database chuyển sang trạng thái **Available**.

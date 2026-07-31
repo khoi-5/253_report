@@ -60,7 +60,7 @@ The quarterfinal and semifinal rounds created noticeable pressure because both t
 
 ## Evidence
 
-![Teams answering AWS questions during the competition](image.png)
+{{< report-image src="images/4-EventParticipated/4.1-Event1/image.png" alt="Teams answering AWS questions during the competition" >}}
 
 <p style="text-align: center;"><em>Figure 4.1. An AWS Organizations and Service Control Policy scenario used in the competition.</em></p>
 

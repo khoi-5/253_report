@@ -64,11 +64,11 @@ I can apply the following principles directly to group projects:
 
 ## Participation evidence
 
-![FCAJ Agentic AI Build Week session information](image.png)
+{{< report-image src="images/4-EventParticipated/4.2-Event2/image.png" alt="FCAJ Agentic AI Build Week session information" >}}
 
 <p style="text-align: center;"><em>Figure 4.2. FCAJ Agentic AI Build Week session information at Bitexco Financial Tower.</em></p>
 
-![Sharing and retrospective session venue](image-1.png)
+{{< report-image src="images/4-EventParticipated/4.2-Event2/image-1.png" alt="Sharing and retrospective session venue" >}}
 
 <p style="text-align: center;"><em>Figure 4.3. Attendees following the FCAJ teams' presentations.</em></p>
 
