@@ -92,7 +92,7 @@ Giá trị lớn nhất đối với em nằm ở việc theo dõi quá trình c
 
 ## Hình ảnh minh chứng
 
-{{< report-image src="images/4-EventParticipated/4.1-Event1/image.png" alt="Các đội trả lời câu hỏi AWS trong cuộc thi" >}}
+{{< report-image src="images/4-EventParticipated/4.1-Event1/image.png" alt="Teams answering AWS questions during the competition" >}}
 
 <p style="text-align: center;"><em>Hình 4.1. Câu hỏi tình huống về AWS Organizations và Service Control Policy tại cuộc thi.</em></p>
 
