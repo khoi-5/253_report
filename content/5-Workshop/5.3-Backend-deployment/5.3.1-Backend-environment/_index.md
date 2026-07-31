@@ -35,7 +35,7 @@ The EC2 security group follows these rules:
 - Port `8080` is not exposed directly to `0.0.0.0/0`.
 - Required outbound traffic uses the NAT Gateway for package downloads and Amazon SES SMTP; RDS connectivity remains inside the VPC.
 
-![Backend EC2 instance after configuration](image.png)
+{{< report-image src="images/5-Workshop/5.3-Backend-deployment/5.3.1-Backend-environment/image.png" alt="Backend EC2 instance after configuration" >}}
 
 <p style="text-align: center;"><em>Figure 5.7. A backend EC2 instance running in ewallet-vpc with its IAM role and IMDSv2 enabled.</em></p>
 
